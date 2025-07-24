@@ -91,7 +91,7 @@ VD: 0x12345678
 - Trong ngôn ngữ lập trình C, con trỏ hàm cho phép bạn truyền một hàm như là một đối số cho một hàm khác, lưu trữ địa chỉ của hàm trong một cấu trúc dữ liệu, hoặc thậm chí truyền hàm như một giá trị trả về từ một hàm khác.
 - Cú pháp con trỏ hàm: 
            
-       return_type (name_pointer*)(<data_type_1>, <data_type_2>,...);
+       return_type (*name_pointer)(<data_type_1>, <data_type_2>,...);
 <details>
 <summary>Ví dụ</summary>
 
