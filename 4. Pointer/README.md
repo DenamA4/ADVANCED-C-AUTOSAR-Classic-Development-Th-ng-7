@@ -25,6 +25,7 @@
 - Byte thấp (Least significant byte - LSB) nằm ở ô nhớ có địa chỉ thấp nhất.
 - Byte cao (Most significant byte - MSB) nằm ở ô nhớ có địa chỉ cao nhất.
 VD: 0xAABBCCDD  
+
 | Địa chỉ | Giá trị |
 |---------|---------|
 | 0x01 | 0xDD |
@@ -37,6 +38,7 @@ VD: 0xAABBCCDD
 - Byte cao (Most significant byte - MSB) nằm ở ô nhớ có địa chỉ thấp nhất.
 VD: 0x12345678
 VD: 0x12345678  
+
 | **Địa chỉ** | **Giá trị** |
 |:-----------:|:-----------:|
 | 0x01        | 0x12        |
