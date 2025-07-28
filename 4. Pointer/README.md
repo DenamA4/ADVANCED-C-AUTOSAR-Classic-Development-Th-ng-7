@@ -25,12 +25,12 @@
 - Byte thấp (Least significant byte - LSB) nằm ở ô nhớ có địa chỉ thấp nhất.
 - Byte cao (Most significant byte - MSB) nằm ở ô nhớ có địa chỉ cao nhất.
 VD: 0xAABBCCDD  
-| **Địa chỉ** | **Giá trị** |
-|:-----------:|:-----------:|
-| 0x01        | 0xDD        |
-| 0x02        | 0xCC        |
-| 0x03        | 0xBB        |
-| 0x04        | 0xAA        |
+| Địa chỉ | Giá trị |
+|---------|---------|
+| 0x01 | 0xDD |
+| 0x02 | 0xCC |
+| 0x03 | 0xBB |
+| 0x04 | 0xAA |
 
 2.Big endian
 - Byte thấp (Least significant byte - LSB) nằm ở ô nhớ có địa chỉ cao nhất.
