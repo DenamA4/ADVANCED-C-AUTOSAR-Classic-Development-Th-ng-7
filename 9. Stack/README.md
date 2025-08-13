@@ -9,7 +9,7 @@
 - Stack là một cấu trúc dữ liệu có nguyên tắc hoạt động là LIFO(Last In First Out), về mặt bản chất nó được triển khai dựa trên phân vùng stack vì nó cùng nguyên lý hoạt động, nhưng khác nhau ở chỗ phân vùng stack do hệ điều hành quản lý, còn cấu trúc dữ liệu stack do người lập trình quản lý.
 - Hoạt động LIFO là phần tử được Push vào cuối cùng sẽ được Pop ra đầu tiên. 
 
-![](images/9. Stack/image_0.png)
+![](../image/9.%20Stack/image_0.jpg)
 
 - Ta liên tưởng stack giống một chiếc bình có đáy, ta đưa vào vật nào đầu tiên thì nó năm sâu dưới đáy bình (Hình trên bến trái mũi tên).
 - Hình bến trái lúc đầu Stack đang  rỗng, sau khi ta push lần lượt thanh 1, thanh 2, thanh 3 vào thì ở đáy stack đang là thanh 1, đỉnh stack lúc này là thanh 3.
