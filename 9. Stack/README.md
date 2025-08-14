@@ -16,24 +16,75 @@
 - Lúc này ta không có cách nào để lấy thanh 1 hay thanh 2 ra đầu tiên được vì cả 2 thanh này đều bị thanh số 3 chặn ở đỉnh, nên ta chỉ có thể lấy thanh 3 ra đầu tiên rồi tiếp đó lần lượt là thanh 2, thanh 1 --> Đây là cơ chế LIFO vì thanh 3 được push vào cuối cùng và cũng được lấy ra đầu tiên.
 
 # 3. Các thao tác cơ bản trên Stack
-- "push" để thêm một phần tử vào đỉnh của stack:
-- "pop" để xóa một phần tử ở đỉnh stack:
-- "peek/top" để lấy giá trị của phần tử ở đỉnh ngăn xếp:
-- Kiểm tra stack đầy: top = size -1:
-- Kiểm tra stack rỗng: top = -1:
-- Mô tả các thao tác:
+- "push" để thêm một phần tử vào đỉnh của stack.
+- "pop" để xóa một phần tử ở đỉnh stack.
+- "peek/top" để lấy giá trị của phần tử ở đỉnh ngăn xếp.
+- Kiểm tra stack đầy: top = size -1.
+- Kiểm tra stack rỗng: top = -1: Khi stack chưa có phần tử nào thì đỉnh stack sẽ trỏ vào đáy của stack.
+- Mô tả các thao tác: Giả sử stack có số lượng phần tử tối đa là 5:
+ 
+  a. Quá trình Push:
 
+    - Ban đầu stack rỗng, biến top = -1, tiếp đến ta push thanh 1 vào stack:
 
+    ![](../image/9.%20Stack/image_1.jpg)
 
+    - Sau khi push thanh 1 vào thì này đỉnh stack đang trỏ đến thanh 1 và top tăng lên 1 là bằng 0:
 
+    ![](../image/9.%20Stack/image_2.jpg)
 
+    - Sau đó ta push tiếp thanh 2 vào, lúc này đỉnh stack đang trỏ đến thanh 2 và top tiếp tục tăng thêm 1 và bằng 1:
 
+    ![](../image/9.%20Stack/image_3.jpg)
 
-    
+    - Tiếp đó, push 3 thanh còn lại vào stack, và bây giờ đỉnh stack là ở thanh 5, biến top = 4 = max_size - 1 tức là stack đã đầy:
 
+    ![](../image/9.%20Stack/image_4.jpg)
 
+  b. Quá trình Pop:
 
+    -  Ta pop phần tử ở đỉnh stack ra là thanh 5, bây giờ đỉnh stack là ở thanh 4, biến top giảm đi một và lúc này bằng 3:
 
+    ![](../image/9.%20Stack/image_5.jpg)
 
+    - Tiếp tục pop đỉnh stack ra, thanh 4 được xóa khỏi stack, đỉnh stack hiện tại là thanh số 3, biến top được giảm tiếp đi 1 và bằng 2:
 
+    ![](../image/9.%20Stack/image_6.jpg)
 
+    - Pop tiếp 2 lần nữa để lấy thanh số 3, thanh số 2 ra thì lúc này đỉnh stack đang ở thanh số 1, và biến top = 0:
+
+    ![](../image/9.%20Stack/image_7.jpg)
+
+    - Khi pop nốt thanh số 1, stack trở thành rỗng và biến top = -1:
+
+    ![](../image/9.%20Stack/image_8.jpg)
+
+# 4. Ứng dụng của stack
+
+- Ngăn xếp được ứng dụng để giải quyết những vấn đề sau:
+  
+  - Xây dựng các giải thuật đệ qui: tất cả các giải thuật đệ qui được xây dựng dựa trên cơ chế LIFO của ngăn xếp.
+
+  - Khử bỏ các giải thuật đệ qui.
+  
+  - Biểu diễn tính toán.
+ 
+  - Duyệt cây, duyệt đồ thị...
+
+  VD về ứng dụng biểu diễn tính toán: Chuyển đổi biểu thức trung tố về biểu thức hậu tố. Ta vẫn hay làm quen và thực hiện tính toán trên các biểu thức số học trung tố. Ví dụ biểu thức trung tố P = (a+b*c)-(a/b+c). Trong cách viết này các phép toán bao giờ cũng đứng giữa hai toán hạng. Phương pháp tính toán được thực hiện theo thứ tự ưu tiên các phép toán số học. Biểu thức số học hậu tố là phương pháp biểu diễn các phép toán hai ngôi +, -, *, /, ^ đứng sau các toán hạng. Phương pháp biểu diễn được thực hiện theo nguyên tắc như sau:
+  
+      - Nếu a + b là biểu thức trung tố thì biểu thức hậu tố tương ứng là a b +
+      
+      - Nếu a - b là biểu thức trung tố thì biểu thức hậu tố tương ứng là a b -
+      
+      - Nếu a * b là biểu thức trung tố thì biểu thức hậu tố tương ứng là a b *
+      
+      - Nếu a / b là biểu thức trung tố thì biểu thức hậu tố tương ứng là a b /
+      
+      - Nếu a ^ b là biểu thức trung tố thì biểu thức hậu tố tương ứng là a b ^ (phép ^ được ký hiệu cho phép lấy lũy thừa)
+      
+      - Nếu (P) trong đó P là hậu tố thì biểu thức hậu tố tương ứng P.
+
+# 5. Demo code
+
+- Định nghĩa cấu trúc Stack:
