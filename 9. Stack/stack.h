@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define STACK_EMPTY -1
-
 /*
 
 - Prototype của các hàm cấp phát động:
@@ -24,9 +22,12 @@
     + Nên mình dùng cấp phát động để cấp phát đến đâu mình dùng đến đó --> tối ưu hơn với, thao tác vùng heap đa năng hơn.
 
 */
+
+#define STACK_EMPTY -1
+
 typedef struct {
-    int* data;  // Trỏ đến phân vùng heap của stack hiện tại, giúp thao tác trên phần tử trong stack này.
-    int size;   // number of elements in stack
+    int* data;   // Trỏ đến phân vùng heap của stack hiện tại, giúp thao tác trên phần tử trong stack này.
+    int size;    // number of elements in stack
     int top;
 } Stack;
 

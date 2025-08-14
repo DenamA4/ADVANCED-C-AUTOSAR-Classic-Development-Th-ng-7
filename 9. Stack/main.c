@@ -1,6 +1,6 @@
 #include "stack.h"
 
-// Ví dụ hàm tính giai thừa
+// Ví dụ hàm tính giai thừa thay vì đệ quy ta dùng stack mô tả quá trình đệ quy chuẩn
 int giaithua(int n)
 {
     if(n < 0)

@@ -85,6 +85,134 @@
       
       - Nếu (P) trong đó P là hậu tố thì biểu thức hậu tố tương ứng P.
 
+  
+  ![](../image/9.%20Stack/image_9.jpg)
+
+Ví dụ với biểu thức P = (a+b*c)-(a/b+c) sẽ được biến đổi thành biểu thức hậu tố tương đương như dưới đây:
+                  
+                  (a+b*c)-(a/b+c) = (a+bc*)-(ab/+c)
+
+                                  = (abc*+)-(ab/c+)
+        
+                                  = abc*+-ab/c+
+
+                                  = abc*+ab/c+-
+
+Đối với biểu thức số học hậu tố, không còn các phép toán ‘(‘ , ‘)’, không còn thứ tự ưu tiên các phép toán. Bài toán đặt ra là cho biểu thức trung tố P hãy chuyển đổi P thành biểu diễn hậu tố tương đương với P. Sau khi đã có biểu thức trung tố P, hãy xây dựng thuật toán tính toán giá trị biểu thức hậu tố P. Thuật toán được xây dựng dựa vào ngăn xếp được thể hiện trong hinh như dưới đây:
+
+Thuật toán chuyển đổi biểu thức trung tố thành biểu thức hậu tố.
+Kiểm nghiệm thuật toán với P = (a+b*c)–(a/b+c):
+
+  ![](../image/9.%20Stack/image_10.jpg)
+
+Kiểm nghiệm thuật toán:
+
+  ![](../image/9.%20Stack/image_11.jpg)
+
+Tính toán biểu thức hậu tố:
+
+  ![](../image/9.%20Stack/image_12.jpg)
+
 # 5. Demo code
 
-- Định nghĩa cấu trúc Stack:
+<details>
+<summary>Định nghĩa cấu trúc dữ liệu Stack</summary>
+
+    #define STACK_EMPTY -1
+
+    typedef struct {
+        int* data;   // Trỏ đến phân vùng heap của stack hiện tại, giúp thao tác trên phần tử trong stack này.
+        int size;    // number of elements in stack
+        int top;
+    } Stack;
+</details>
+
+<details>
+<summary>Hàm khởi tạo Stack ban đầu</summary>
+
+    void init_stack(Stack* stack, int max_size)
+    {
+        stack->data = (int*)malloc(max_size*sizeof(int));
+        stack->size = max_size;
+        stack->top = -1;
+    }
+</details>
+
+<details>
+<summary>Hàm kiểm tra Stack đầy</summary>
+
+    bool isFull(Stack stack)
+    {
+        return stack.top == stack.size - 1 ? true : false;
+    }
+</details>
+
+<details>
+<summary>Hàm kiểm tra Stack rỗng</summary>
+
+    bool isEmpty(Stack stack)
+    {
+        return stack.top == STACK_EMPTY;
+    }
+</details>
+
+<details>
+<summary>Hàm thêm phần tử mới vào đỉnh Stack</summary>
+
+    void push(Stack* stack, int new_data)
+    {
+        if(!isFull(*stack)) 
+        {
+            stack->top++;
+            // *(++stack->data) = new_data; --> chú ý cách này có thể thay đổi con trỏ gốc làm free() sau này sai lệch
+            stack->data[stack->top] = new_data; 
+            printf("%d\n", stack->data[stack->top]);
+            return;
+        }    
+        printf("stack full!\n");
+    }
+</details>
+
+<details>
+<summary>Hàm xóa phần tử ở đỉnh Stack</summary>
+
+    int pop(Stack* stack)
+    {
+        if(!isEmpty(*stack))
+        {
+            int data = stack->data[stack->top];
+            stack->top--;
+            return data;
+        }
+        printf("stack empty!\n");
+        return STACK_EMPTY;
+    }
+</details>
+
+<details>
+<summary>Hàm xem giá trị phần tử ở đỉnh Stack</summary>
+
+    int top(Stack stack)
+  ``{
+      if(!isEmpty(stack)) 
+      {
+          return stack.data[stack.top];
+      }
+      return STACK_EMPTY;
+    }
+</details>
+
+<details>
+<summary>Hàm giải phóng vùng nhớ, clear cả Stack</summary>
+
+    bool clear(Stack* stack)
+    {
+        if(stack->data != NULL)
+        {
+            free(stack->data);
+            stack->data = NULL;
+        }
+        stack->size = 0;
+        stack->top = -1;
+    }
+</details>
