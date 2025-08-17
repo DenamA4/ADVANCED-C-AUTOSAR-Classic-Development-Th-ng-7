@@ -19,3 +19,9 @@
 - Hàng đợi hai điểm cuối (double ended queue): hàng đợi được xây dựng theo nguyên tắc phép đưa phần tử vào và lấy phần tử ra khỏi hàng đợi được thực hiện ở hai điểm cuối.
 
     ![](../image/10.%20Queue/image_0.jpg)
+
+# 3. Ứng dụng của hàng đợi
+
+- Ứng dụng của hàng đợi tuyến tính(linear queue): Ví dụ 2 MCU giao tiếp với nhau, nếu 1 MCU gửi dữ liệu đi, bên nhận sau khi nhận hết dữ liệu, nó sẽ phải xử lý hết các dữ liệu trong hàng đợi, trong lúc đó đến khi hàng đợi dữ liệu bên nhận được xử lý xong thì bên gửi mới gửi được.
+
+- Nhưng dùng linear queue trong trường hợp 2 MCU giao tiếp trên nó chưa được tối ưu, gây chậm trễ truyền dữ liệu nên ta có một cơ chế khác mạnh mẽ hơn là hàng đợi vòng (circular queue).
