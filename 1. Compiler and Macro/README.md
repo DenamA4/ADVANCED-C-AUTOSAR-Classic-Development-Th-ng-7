@@ -3,7 +3,7 @@
 - Mã lập trình C là các text gần với ngôn ngữ con người có thể hiểu để viết chương trình logic chạy trên phần cứng nhúng, thì ta phải có một trình biên dịch(compiler) để biên dịch chương trình C chúng ta viết ra thành các mã máy 0/1 để máy tính có thể hiểu được và thực thi lệnh.
 - Quá trình để biên dịch từ mã lập trình viên viết ra sang mã máy để máy tính có thể hiểu được gồm 4 bước lần lượt là: Preprocessing - Compilation - Assemble - linking:
 
-![](../image/1.%20Compiler and Macro/image_0.jpg)
+![](../image/1.%20Compiler_and_Macro/image_0.jpg)
 
 ## a) Preprocessor
 - Quá trình này gồm việc:
